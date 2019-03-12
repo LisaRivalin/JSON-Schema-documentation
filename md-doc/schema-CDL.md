@@ -6,11 +6,15 @@ The raw schema can be found here :
 schemas/schema-CDL.json
 ```
 
-Json representation of a CDL file. The schemas has [core properties](# Core properties) constructed with the help of generic [definitions](# Definitions).
+Json representation of a CDL file. The schemas has
+[core properties](# Core properties) constructed with the help of
+generic [definitions](#Definitions).
 
-| Abstract  | JSON Schema draft | CDL Schema version | Custom Properties | Additional Properties | Type |
-|----------|------------|--------|--------------|-------------------|-----------------------|------------|
-| CDL file  | 07 | 1 | Forbidden | Forbidden | array containing objects |
+
+
+| Abstract  |  draft |  version | Additional Properties | Type |
+|----------|------------|--------|--------------|-------------------|-|
+| CDL file  | 07 | 1 | Forbidden | array containing objects |
 
 # Core properties
 
