@@ -37,7 +37,7 @@ The array object has the following properties (see above for more detail on each
 | [svg](#svg)  | object  | Yes  | None  |
 
 ## <a name="modelicaFile"></a>`modelicaFile` (string, required)
-Name of the Modelica file, must end with ".mo" .
+ Name of the Modelica file, must end with ".mo" .
 
 Additional restrictions:
 
@@ -73,16 +73,19 @@ The `public` object has the following properties (see above for more detail on e
 
 | Property | Type | Required | constraint |
 |----------|------|-------|------|
-| [parameters](#parameters)  | [ModelicaBlock](#ModelicaBlock)  | No  | None  |
+| [parameters](#public-parameters)  | [ModelicaBlock](#ModelicaBlock)  | No  | None  |
+| [models](#public-models)  |  [ModelicaBlock](#ModelicaBlock) | No  | None  |
+| [inputs](#public-inputs)  | [ModelicaBlock](#ModelicaBlock)  | No  | None  |
+| [outputs](#public-inputs)  |  [ModelicaBlock](#ModelicaBlock) | No  | None  |
 
 
-### <a name="parameters">`parameters` (ModelicaBlock)
+### <a name="public-parameters"></a>`parameters` ([ModelicaBlock](#ModelicaBlock))
 
-### `models` (ModelicaBlock)
+### <a name="public-models"></a>`models` ([ModelicaBlock](#ModelicaBlock))
 
-### `inputs` (ModelicaBlock)
+### <a name="public-inputs"></a>`inputs` ([ModelicaBlock](#ModelicaBlock))
 
-### `outputs` (ModelicaBlock)
+### <a name="public-outputs"></a>`outputs` ([ModelicaBlock](#ModelicaBlock))
 
 ## `protected` (object)
 
@@ -127,6 +130,8 @@ Properties of the `svg` object:
 # <a name="Definitions"></a>Definitions
 ---
 
-| Property | Type | Group |
-|----------|------|-------|
-| [b](#b) | `number` | `schema-CDL.json#/definitions/color` |
+| Property | Type |
+|----------|------|
+| [ModelicaBlock](#ModelicaBlock) |  |
+
+## <a name="ModelicaBlock"></a>`ModelicaBlock`
