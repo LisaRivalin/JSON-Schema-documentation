@@ -1,17 +1,34 @@
 
-# JSON parsed Modelica file Schema
+# JSON Schema for CDL files
 
+The raw schema can be found here :
 ```
-schema-CDL.json
+schemas/schema-CDL.json
 ```
 
-Json representation of a Modelica model
+Json representation of a CDL file. The schemas has [core properties](# Core properties) constructed with the help of generic [definitions](# Definitions).
 
-| Abstract | Extensible | Status | Identifiable | Custom Properties | Additional Properties | Defined In |
+| Abstract  | JSON Schema draft | CDL Schema version | Custom Properties | Additional Properties | Type |
 |----------|------------|--------|--------------|-------------------|-----------------------|------------|
-| Cannot be instantiated | Yes | Experimental | No | Forbidden | Permitted |  |
+| CDL file  | 07 | 1 | Forbidden | Forbidden | array containing objects |
 
-# JSON parsed Modelica file Definitions
+# Core properties
+
+The schema defines an array with all elements of the type `object`.
+
+The array object has the following properties (see above for more detail on each property)
+
+| Property | Type | Required |
+|----------|------|-------|
+|  [modelicaFile](#modelicaFile) | string  | Yes  |
+
+## `modelicaFile` (string, required)
+
+Additional restrictions:
+
+* Regex pattern: `.*.(mo|MO)`
+
+---
 
 | Property | Type | Group |
 |----------|------|-------|
@@ -173,7 +190,7 @@ undefined
 
 
 
-All instances must conform to this regular expression 
+All instances must conform to this regular expression
 (test examples [here](https://regexr.com/?expression=%5E(%3C(svg%7CSVG))(.%7C%0A)*(%3C%2F(svg%7CSVG)%3E)%24)):
 ```regex
 ^(<(svg|SVG))(.|
@@ -842,7 +859,7 @@ undefined
 
 
 
-All instances must conform to this regular expression 
+All instances must conform to this regular expression
 (test examples [here](https://regexr.com/?expression=%5E(%5Ba-zA-Z0-9._*%5D*)%24)):
 ```regex
 ^([a-zA-Z0-9._*]*)$
@@ -905,9 +922,3 @@ All instances must conform to this regular expression
 
 
 `string`
-
-
-
-
-
-
