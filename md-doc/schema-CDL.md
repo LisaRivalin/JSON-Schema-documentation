@@ -13,7 +13,7 @@ generic [definitions](#Definitions).
 
 
 | Abstract  |  draft |  version | Additional Properties | Type |
-|----------|------------|--------|--------------|-------------------|-|
+|----------|------------|--------|--------------|-------------------|
 | CDL file  | 07 | 1 | Forbidden | array containing objects |
 
 # Core properties
@@ -22,15 +22,24 @@ The schema defines an array with all elements of the type `object`.
 
 The array object has the following properties (see above for more detail on each property)
 
-| Property | Type | Required |
-|----------|------|-------|
-|  [modelicaFile](#modelicaFile) | string  | Yes  |
+| Property | Type | Required | constraint |
+|----------|------|-------|------|
+|  [modelicaFile](#modelicaFile) | string  | Yes  | pattern |
+|  [within](#modelicaFile) | string  | No  | pattern |
 
 ## `modelicaFile` (string, required)
 
 Additional restrictions:
 
 * Regex pattern: `.*.(mo|MO)`
+
+### `within` (string)
+
+Within statement from the Modelica file : no special characters or spaces
+
+Additional restrictions:
+
+* Regex pattern: `^([a-zA-Z0-9._*]*)$`
 
 ---
 
