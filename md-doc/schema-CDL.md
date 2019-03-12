@@ -11,7 +11,7 @@ Json representation of a CDL file. The schemas has
 
 
 | Abstract  |  JSON-Schema draft |  version |last update | Additional Properties | Type |
-|----------|------------|--------|--------------|-------------------|
+|----------|------------|--------|--------------|-------------------|---|
 | Structure of a Json file derived from CDL  | 07 | 1 | March 2019 |Forbidden | array containing objects |
 
 # <a name="core-properties"></a> Core properties
