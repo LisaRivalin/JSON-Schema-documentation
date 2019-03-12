@@ -20,12 +20,23 @@ generic [definitions](#Definitions).
 
 The schema defines an array with all elements of the type `object`.
 
-The array object has the following properties (see above for more detail on each property)
+The array object has the following properties (see above for more detail on each property).
 
 | Property | Type | Required | constraint |
 |----------|------|-------|------|
-|  [modelicaFile](#modelicaFile) | string  | Yes  | pattern |
-|  [within](#modelicaFile) | string  | No  | pattern |
+|  [modelicaFile](#modelicaFile) | string  | Yes  | string pattern |
+|  [within](#modelicaFile) | string  | No  | string pattern |
+|  [topClassName](#topClassName) | string  | Yes  | string pattern  |
+|  [comment](#comment)  |  string |  No |  None |
+|  [public](#public)  | object  |  No |  None |
+|  [protected](#protected) | object  | No  |  None |
+|  [connections](#connections)| array  | No  | None  |
+|  [info](#info) | string  | No  |  string pattern |
+|  [extends](#extends) | [ModelicaBlock](#ModelicaBlock) | No  |  None |
+|  [icon](#icon) | [GraphicalBlock](#GraphicalBlock)  | Yes  | must contain a [coordinateSystem](#coordinatesystem) element  |
+| [diagram](#diagram)  | [GraphicalBlock](#GraphicalBlock)   |  No | must constain a [coordinateSystem](#coordinatesystem) element  |
+| [vendorAnnotation](#vendorAnnotation)  | [ModelicaBlock/items/properties/annotation](#annotation)  |  No |  None |
+| [svg](#svg)  | object  | Yes  | None  |
 
 ## `modelicaFile` (string, required)
 
@@ -33,7 +44,7 @@ Additional restrictions:
 
 * Regex pattern: `.*.(mo|MO)`
 
-### `within` (string)
+## `within` (string)
 
 Within statement from the Modelica file : no special characters or spaces
 
@@ -41,6 +52,73 @@ Additional restrictions:
 
 * Regex pattern: `^([a-zA-Z0-9._*]*)$`
 
+## `topClassName` (string, required)
+
+Name of the top class of the Modelica model: no special characters or spaces
+
+Additional restrictions:
+
+* Regex pattern: `^([a-zA-Z0-9._*]*)$`
+
+## `comment` (string)
+
+Comment on the model
+
+## `public` (object)
+
+Public part of the modelica file
+
+Properties of the `public` object:
+
+### `parameters` (ModelicaBlock)
+
+### `models` (ModelicaBlock)
+
+### `inputs` (ModelicaBlock)
+
+### `outputs` (ModelicaBlock)
+
+## `protected` (object)
+
+Protected part of the modelica file
+
+Properties of the `protected` object:
+
+### `parameters` (ModelicaBlock)
+
+### `models` (ModelicaBlock)
+
+## `connections` (array)
+
+The object is an array with all elements of the type `array`.
+
+## `info` (string)
+
+Informations of the model must be in html format
+
+Additional restrictions:
+
+* Regex pattern: `^(<(html|HTML)>)(.|
+)*(</(html|HTML)>)$`
+
+## `extends` (ModelicaBlock)
+
+## `icon` (GraphicalBlock, required)
+
+## `diagram` (GraphicalBlock)
+
+## `vendorAnnotation` (ModelicaBlock/items/properties/annotation)
+
+## `svg` (object, required)
+
+Properties of the `svg` object:
+
+### `icon`
+
+### `diagram`
+
+
+# Definitions
 ---
 
 | Property | Type | Group |
