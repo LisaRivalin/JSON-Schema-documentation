@@ -18,9 +18,9 @@ Json representation of a CDL file. The schemas has
 
 The schema defines an array with all elements of the type `object`.
 
-The array object has the following properties (see above for more detail on each property).
+The array object has the following properties:
 
-| Property | Type | Required | constraint |
+| Property | Type | Required | constraints |
 |----------|------|-------|------|
 |  [modelicaFile](#modelicaFile) | string  | Yes  | string pattern |
 |  [within](#within) | string  | No  | string pattern |
@@ -69,14 +69,14 @@ Public part of the modelica file.
 
 * Additional properties : Forbidden
 
-The `public` object has the following properties (see above for more detail on each property). :
+The `public` object has the following properties :
 
-| Property | Type | Required | constraint |
+| Property | Type | Required | constraints |
 |----------|------|-------|------|
 | [parameters](#public-parameters)  | [ModelicaBlock](#ModelicaBlock)  | No  | None  |
 | [models](#public-models)  |  [ModelicaBlock](#ModelicaBlock) | No  | None  |
-| [inputs](#public-inputs)  | [ModelicaBlock](#ModelicaBlock)  | No  | None  |
-| [outputs](#public-inputs)  |  [ModelicaBlock](#ModelicaBlock) | No  | None  |
+| [inputs](#public-inputs)  | [ModelicaBlock](#ModelicaBlock)  | No  | Yes  |
+| [outputs](#public-outputs)  |  [ModelicaBlock](#ModelicaBlock) | No  | Yes  |
 
 
 ### <a name="public-parameters"></a>`parameters` ([ModelicaBlock](#ModelicaBlock))
@@ -85,21 +85,49 @@ The `public` object has the following properties (see above for more detail on e
 
 ### <a name="public-inputs"></a>`inputs` ([ModelicaBlock](#ModelicaBlock))
 
+Additional restrictions:
+
+* `className` must be `Buildings.Controls.OBC.CDL.Interfaces.RealInput`
+
 ### <a name="public-outputs"></a>`outputs` ([ModelicaBlock](#ModelicaBlock))
 
-## `protected` (object)
+Additional restrictions:
 
-Protected part of the modelica file
+* `className` must be `Buildings.Controls.OBC.CDL.Interfaces.RealOutput`
 
-Properties of the `protected` object:
+## <a name="protected"></a>`protected` (object)
 
-### `parameters` (ModelicaBlock)
+Protected part of the modelica file.
 
-### `models` (ModelicaBlock)
+* Additional properties : Forbidden
 
-## `connections` (array)
+The `protected` object has the following properties :
 
-The object is an array with all elements of the type `array`.
+| Property | Type | Required | constraints |
+|----------|------|-------|------|
+| [parameters](#protected-parameters)  | [ModelicaBlock](#ModelicaBlock)  | No  | None  |
+| [models](#protected-models)  |  [ModelicaBlock](#ModelicaBlock) | No  | None  |
+
+### <a name="protected-parameters"></a> `parameters` ([ModelicaBlock](#ModelicaBlock))
+
+### <a name="protected-models"></a>`models` ([ModelicaBlock](#ModelicaBlock))
+
+## <a name="connections"></a>`connections` (array)
+
+* Additional properties : Forbidden
+
+`connections` is an array with all elements of the type `array` containing `objects`.
+
+The object contained in the arrays are the following:
+
+| Property | Type | Required | constraints |
+|----------|------|-------|------|
+| [instance](#instance)  |  string | No  | None  |
+| [connector](#connector) | string  |  No | None  |
+
+### <a name="instance"></a>`instance` (string)
+
+### <a name="connector"></a>`connector` (string)
 
 ## `info` (string)
 
