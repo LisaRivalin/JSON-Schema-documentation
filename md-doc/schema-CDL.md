@@ -7,9 +7,7 @@ schemas/schema-CDL.json
 ```
 
 Json representation of a CDL file. The schemas has
-[core properties](#core-properties) constructed with the help of
-generic [definitions](#Definitions).
-
+[core properties](#core-properties) constructed using [definitions](#Definitions).
 
 
 | Abstract  |  draft |  version | Additional Properties | Type |
@@ -24,7 +22,7 @@ The array object has the following properties (see above for more detail on each
 
 | Property | Type | Required | constraint |
 |----------|------|-------|------|
-|  [modelicaFile](#abcd) | string  | Yes  | string pattern |
+|  [modelicaFile](#modelicaFile) | string  | Yes  | string pattern |
 |  [within](#within) | string  | No  | string pattern |
 |  [topClassName](#topClassName) | string  | Yes  | string pattern  |
 |  [comment](#comment)  |  string |  No |  None |
@@ -38,7 +36,7 @@ The array object has the following properties (see above for more detail on each
 | [vendorAnnotation](#vendorAnnotation)  | [ModelicaBlock/items/properties/annotation](#annotation)  |  No |  None |
 | [svg](#svg)  | object  | Yes  | None  |
 
-## <a name="abcd"></a>`modelicaFile` (string, required)
+## <a name="modelicaFile"></a>`modelicaFile` (string, required)
 
 Additional restrictions:
 
